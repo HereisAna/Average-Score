@@ -1,0 +1,60 @@
+#include <iostream>
+#include <iomanip>
+//this program collects 4 test scores from 1 student, drops the lowest score and calculates the average test score
+
+const int NUMBER_TESTS = 4;
+double testScores[NUMBER_TESTS], total, lowerScore, average, droppedTotal;
+
+
+void getTestScores(double scores[], int size) {
+
+	int counter;
+	for (counter = 0; counter < NUMBER_TESTS; counter++) {
+		std::cout << " test# " << (counter + 1) << " is: ";
+		std::cin >> scores[counter];
+	}
+
+}
+
+double getTotal(double testScores[], int NUMBER_TESTS) {
+	int count;
+	double total(0.0);
+	for (count = 0; count < NUMBER_TESTS; count++) {
+		total += testScores[count];
+	}
+	return total;
+}
+
+double findLowest(double testScores[], int NUMBER_TESTS) {
+	int count;
+	double lowest = testScores[0];
+	for (count = 1; count < NUMBER_TESTS; count++)
+		if (lowest > testScores[count])
+			lowest = testScores[count];
+		return lowest;
+}
+
+double dropLowest(double testScores[], int NUMBER_TESTS) {
+
+	return droppedTotal;
+}
+
+int main()
+{
+	using namespace std;
+
+	cout << fixed << showpoint << setprecision(1);
+
+	getTestScores(testScores, NUMBER_TESTS);
+
+	double droppedTotal;
+	droppedTotal = getTotal(testScores, NUMBER_TESTS) - findLowest(testScores, NUMBER_TESTS);
+	double average;
+	average = droppedTotal / (NUMBER_TESTS - 1);
+	cout << average << endl;
+
+
+
+
+	return 0;
+}
